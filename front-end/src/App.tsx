@@ -1,10 +1,11 @@
 import React from "react";
+import { Routes } from "./pages/routes";
 
-function App() {
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <p>Teste</p>
-    </div>
+    <>
+      <Routes />
+    </>
   );
 }
 
