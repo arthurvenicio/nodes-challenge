@@ -1,0 +1,34 @@
+.note {
+  width: 20rem;
+  min-width: 20rem;
+  height: 8rem;
+  min-height: 8rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.note .titulo {
+  padding: 1rem;
+}
+
+.progress {
+  align-self: center;
+  width: 80%;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.note .titulo p {
+  color: #1da69c;
+}
+
+.note .description {
+  padding: 1rem;
+}
+.note .description p {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.8);
+}

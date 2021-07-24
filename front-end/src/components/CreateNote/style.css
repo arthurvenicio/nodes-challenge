@@ -17,7 +17,7 @@
 .container .box-create .titulo h1 {
   font-weight: 700;
 
-  color: purple;
+  color: rgba(130, 40, 141, 255);
 }
 
 .container .box-create .form form {
@@ -50,6 +50,8 @@ button {
   border: none;
   border-radius: 5px;
   padding: 0.5rem;
+
+  font-weight: 400;
 
   background: rgb(226, 148, 4);
 

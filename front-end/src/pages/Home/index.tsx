@@ -1,5 +1,6 @@
 import React from "react";
 import { CreateNote } from "../../components/CreateNote";
+import { ListNotes } from "../../components/ListNotes";
 import "./style.css";
 
 export function Home(): JSX.Element {
@@ -7,10 +8,8 @@ export function Home(): JSX.Element {
     <div className="container">
       <div className="create-note">
         <CreateNote />
-        <div className="test">
-          <p>Teste</p>
-        </div>
       </div>
+      <ListNotes />
     </div>
   );
 }

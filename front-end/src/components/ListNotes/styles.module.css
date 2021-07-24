@@ -1,0 +1,32 @@
+.container {
+  height: 100vh;
+
+  padding: 0.45rem;
+}
+
+.titulo {
+  padding: 1rem;
+  width: 15rem;
+}
+
+.titulo h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 700;
+  color: rgba(130, 40, 141, 255);
+}
+
+.cards {
+  width: 58rem;
+  height: 36rem;
+
+  padding: 1rem;
+
+  overflow-y: scroll;
+
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-flow: column wrap;
+
+  /* border: 1px solid black; */
+}
