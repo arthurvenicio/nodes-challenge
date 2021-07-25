@@ -5,9 +5,15 @@ import { v4 } from "uuid";
 import { db } from "../config/firebase";
 import { Note } from "../models/notes";
 
+type NoteT = {
+  title: string;
+  description: string;
+  id: string;
+};
+
 type Notes = [];
 
-export async function CreateNote(
+export async function createNote(
   req: Request,
   res: Response,
   next: NextFunction
@@ -31,43 +37,34 @@ export async function CreateNote(
   }
 }
 
-// export async function GetNotes(
-//   req: Request,
-//   res: Response,
-//   next: NextFunction
-// ) {
-//   try {
-//     const id = req.body.id;
+export async function getNotes(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const notes = await db.collection("notes");
 
-//     const notes = !id
-//       ? await db.collection("notes")
-//       : await db.collection("notes").doc(id);
-//     const data = await notes.get();
+    const data = await notes.get();
 
-//     const notesArray: Notes = [];
+    const notesArray: NoteT[] = [];
 
-//     if (data.empty) {
-//       res.status(404).send("Nenhuma nota foi encontrada");
-//     } else {
-//       if (!id) {
-//         data.forEach((doc) => {
-//           const note = new Note(
-//             doc.id,
-//             doc.data().title,
-//             doc.data().description
-//           );
+    if (data.empty) {
+      res.status(404).send("Nenhuma nota foi encontrada");
+    } else {
+      data.forEach((doc) => {
+        const note = new Note(doc.id, doc.data().title, doc.data().description);
 
-//           notesArray.push(note);
-//         });
-//         res.send(notesArray);
-//       }
-//     }
-//   } catch (error) {
-//     res.status(400).send(error.message);
-//   }
-// }
+        notesArray.push(note);
+      });
+      res.send(notesArray);
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+}
 
-export async function GetNote(req: Request, res: Response, next: NextFunction) {
+export async function getNote(req: Request, res: Response, next: NextFunction) {
   try {
     const { id } = req.body;
     if (id) {
@@ -83,7 +80,7 @@ export async function GetNote(req: Request, res: Response, next: NextFunction) {
   }
 }
 
-export async function DeleteNode(
+export async function deleteNode(
   req: Request,
   res: Response,
   next: NextFunction
