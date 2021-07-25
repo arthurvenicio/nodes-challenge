@@ -5,4 +5,11 @@ node_modules/
 .vscode/
 
 #Env variables
-.env 
+.env
+.env.local
+
+#firebase
+.firebaserc
+firebase.json
+firestore.*
+agendeme-ef646-firebase-adminsdk-mxt18-8a7ea617d0.json
