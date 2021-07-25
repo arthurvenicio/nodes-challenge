@@ -1,7 +1,36 @@
-import React from "react";
+import React, { FormEvent, useState } from "react";
+import { api } from "../../services/api";
 import "./style.css";
 
+const initValue = {
+  title: "",
+  description: "",
+};
+
 export function CreateNote(): JSX.Element {
+  const [values, setValues] = useState(initValue);
+
+  function onChange(ev: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = ev.target;
+
+    const newDate = { ...values, [name]: value };
+
+    setValues(newDate);
+    console.log(values);
+  }
+
+  function onSubmit(ev: FormEvent) {
+    ev.preventDefault();
+
+    // console.log(values);
+    api
+      .post("/note", values)
+      .then((response) => alert(`${response.data.id}create with sucess`))
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
+
   return (
     <div className="slide">
       <div className="box-create">
@@ -9,12 +38,12 @@ export function CreateNote(): JSX.Element {
           <h1 className="titulo">Bloco de Notas</h1>
         </div>
         <div className="form">
-          <form>
+          <form onSubmit={onSubmit}>
             <div>
-              <input type="text" placeholder="Assunto" />
+              <input type="text" name="title" placeholder="Assunto" onChange={onChange} />
             </div>
             <div>
-              <input type="text" className="text" placeholder="Texto" />
+              <input type="text" className="text" name="description" placeholder="Texto" onChange={onChange} />
             </div>
             <button id="button-orange" type="submit">
               CRIAR NOTA
