@@ -82,3 +82,21 @@ export async function GetNote(req: Request, res: Response, next: NextFunction) {
     res.status(404).send(error.message);
   }
 }
+
+export async function DeleteNode(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const { id } = req.body;
+    if (id) {
+      await db.collection("notes").doc(id).delete();
+      res.status(200).send("Note deletado com sucesso!");
+    } else {
+      res.status(404).send("Não tenho o id!");
+    }
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+}
