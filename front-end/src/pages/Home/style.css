@@ -11,10 +11,18 @@
   display: flex;
 }
 
-.create-node {
+.create-note {
+  position: fixed;
+  width: 26.5rem;
   height: 100vh;
 
-  border: 1px solid orange;
+  background: #fff;
+}
+
+.container .list-notes {
+  width: calc(100% - 26.5rem);
+  margin-left: auto;
+  overflow: scroll;
 }
 
 @media (max-width: 360px) {

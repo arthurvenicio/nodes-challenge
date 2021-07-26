@@ -1,14 +1,16 @@
 .note {
   width: 20rem;
   min-width: 20rem;
-  height: 8rem;
-  min-height: 8rem;
+  height: 8.5rem;
+  min-height: 9rem;
 
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 
   display: flex;
   flex-direction: column;
+
+  box-sizing: border-box;
 }
 
 .note .titulo {
@@ -27,8 +29,31 @@
 
 .note .description {
   padding: 1rem;
+  height: 3.5rem;
 }
 .note .description p {
   font-size: 0.95rem;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.btndelete {
+  margin-right: 1rem;
+  margin-left: auto;
+}
+
+button.buttondelete {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  top: 10;
+  border: none;
+  background: transparent;
+
+  color: rgb(170, 8, 8);
+}
+
+@media (max-width: 411px) {
+  .note {
+    width: 22rem;
+    max-width: 23rem;
+  }
 }

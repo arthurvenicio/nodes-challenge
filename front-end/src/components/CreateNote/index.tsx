@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { api } from "../../services/api";
 import "./style.css";
 
@@ -9,6 +10,7 @@ const initValue = {
 
 export function CreateNote(): JSX.Element {
   const [values, setValues] = useState(initValue);
+  const history = useHistory();
 
   function onChange(ev: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = ev.target;
@@ -31,6 +33,10 @@ export function CreateNote(): JSX.Element {
       });
   }
 
+  function Redirect() {
+    history.push("/notes");
+  }
+
   return (
     <div className="slide">
       <div className="box-create">
@@ -43,12 +49,12 @@ export function CreateNote(): JSX.Element {
               <input type="text" name="title" placeholder="Assunto" onChange={onChange} required />
             </div>
             <div>
-              <input type="text" className="text" name="description" placeholder="Texto" onChange={onChange} required />
+              <input type="text" className="text" name="description" placeholder="Texto" maxLength={110} onChange={onChange} required />
             </div>
             <button className="button-orange" type="submit">
               CRIAR NOTA
             </button>
-            <button className="button-orange2" type="submit">
+            <button className="button-orange2" onClick={Redirect} type="submit">
               VER NOTAS
             </button>
           </form>

@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 type Note = {
   title: string;
   description: string;
-  id?: string;
+  id: string;
 };
 
 export function ListNotes(): JSX.Element {
@@ -16,7 +16,7 @@ export function ListNotes(): JSX.Element {
     api
       .get(`/notes`)
       .then((response: AxiosResponse) => {
-        // console.log(response.data);
+        console.log(response.data);
         setData(response.data);
       })
       .catch((err) => {
