@@ -9,7 +9,9 @@ export function Home(): JSX.Element {
       <div className="create-note">
         <CreateNote />
       </div>
-      <ListNotes />
+      <div className="list-notes">
+        <ListNotes />
+      </div>
     </div>
   );
 }

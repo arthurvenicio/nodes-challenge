@@ -40,13 +40,16 @@ export function CreateNote(): JSX.Element {
         <div className="form">
           <form onSubmit={onSubmit}>
             <div>
-              <input type="text" name="title" placeholder="Assunto" onChange={onChange} />
+              <input type="text" name="title" placeholder="Assunto" onChange={onChange} required />
             </div>
             <div>
-              <input type="text" className="text" name="description" placeholder="Texto" onChange={onChange} />
+              <input type="text" className="text" name="description" placeholder="Texto" onChange={onChange} required />
             </div>
-            <button id="button-orange" type="submit">
+            <button className="button-orange" type="submit">
               CRIAR NOTA
+            </button>
+            <button className="button-orange2" type="submit">
+              VER NOTAS
             </button>
           </form>
         </div>

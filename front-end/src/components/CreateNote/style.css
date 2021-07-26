@@ -42,8 +42,12 @@
   height: 5.5rem;
 }
 
-#button-orange {
+.button-orange {
   margin-left: auto;
+}
+
+.button-orange2 {
+  display: none;
 }
 
 button {
@@ -63,4 +67,45 @@ button {
 button:hover {
   cursor: pointer;
   filter: brightness(0.85);
+}
+
+@media (max-width: 414px) {
+  .slide {
+    /* width: 100vh; */
+    /* height: 100vh; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box-create {
+    width: 25rem;
+    height: 25rem;
+
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container .box-create .titulo h1 {
+    font-size: 2.4rem;
+  }
+
+  .button-orange {
+    align-self: center;
+    margin-left: 0;
+  }
+  .button-orange2 {
+    display: block;
+    align-self: center;
+    margin-left: 0;
+  }
+
+  button {
+    width: 8rem;
+    height: 3rem;
+  }
 }

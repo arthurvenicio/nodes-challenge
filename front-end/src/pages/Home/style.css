@@ -16,3 +16,21 @@
 
   border: 1px solid orange;
 }
+
+@media (max-width: 360px) {
+  .list-notes {
+    display: none;
+  }
+}
+
+@media (max-width: 411px) {
+  .list-notes {
+    display: none;
+  }
+}
+
+@media (max-width: 414px) {
+  .list-notes {
+    display: none;
+  }
+}
