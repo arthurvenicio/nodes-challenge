@@ -2,15 +2,22 @@ import React from "react";
 
 import styles from "./styles.module.css";
 
-export function Note(): JSX.Element {
+type NoteProps = {
+  index: number;
+  title: string;
+  description: string;
+  id?: string;
+};
+
+export function Note({ title, description, index }: NoteProps): JSX.Element {
   return (
-    <div className={styles.note}>
+    <div key={index} className={styles.note}>
       <div className={styles.titulo}>
-        <p>Teste</p>
+        <p>{title}</p>
       </div>
       <div className={styles.progress}></div>
       <div className={styles.description}>
-        <p>Teste teste teste</p>
+        <p>{description}</p>
       </div>
     </div>
   );

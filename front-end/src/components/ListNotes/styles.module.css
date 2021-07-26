@@ -11,7 +11,7 @@
 
 .titulo h2 {
   font-family: Roboto, sans-serif;
-  font-size: 700;
+  font-weight: 700;
   color: rgba(130, 40, 141, 255);
 }
 
@@ -19,14 +19,21 @@
   width: 58rem;
   height: 36rem;
 
-  padding: 1rem;
+  padding: 1rem 2rem;
 
   overflow-y: scroll;
 
   display: flex;
-  justify-content: space-around;
-  align-content: center;
-  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-around;
+  flex-flow: row wrap;
+
+  box-sizing: border-box;
 
   /* border: 1px solid black; */
+}
+
+.card {
+  margin-top: 1rem;
 }
