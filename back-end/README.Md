@@ -4,7 +4,7 @@
 
 - [NodeJs](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Firebase - Firstore](https://firebase.google.com/docs/firestore)
+- [Firebase - Firestore](https://firebase.google.com/docs/firestore)
 
 ### Passo a Passo
 

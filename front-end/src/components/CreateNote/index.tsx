@@ -27,7 +27,7 @@ export function CreateNote(): JSX.Element {
     // console.log(values);
     api
       .post("/note", values)
-      .then((response) => alert(`${response.data.id}create with sucess`))
+      .then(() => alert(`A nota foi criada com sucesso!`))
       .catch(function (error) {
         console.error(error);
       });

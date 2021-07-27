@@ -56,4 +56,51 @@ button.buttondelete {
     width: 22rem;
     max-width: 23rem;
   }
+
+  .btndelete {
+    /* border: 1px solid black; */
+    margin-left: auto;
+  }
+
+  button.buttondelete {
+    font-weight: 700;
+    width: 5rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .note {
+    width: 22rem;
+    max-width: 23rem;
+  }
+
+  .btndelete {
+    /* border: 1px solid black; */
+    margin-left: auto;
+  }
+
+  button.buttondelete {
+    font-weight: 700;
+    width: 5rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .note {
+    width: 20rem;
+    max-width: 23rem;
+  }
+
+  .btndelete {
+    /* border: 1px solid black; */
+    margin-left: auto;
+  }
+
+  button.buttondelete {
+    font-weight: 700;
+    width: 5rem;
+    height: 2rem;
+  }
 }

@@ -1,5 +1,6 @@
 import { AxiosResponse } from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { api } from "../../services/api";
 import { Note } from "../Note";
 import styles from "./styles.module.css";
@@ -16,7 +17,7 @@ export function ListNotes(): JSX.Element {
     api
       .get(`/notes`)
       .then((response: AxiosResponse) => {
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
       })
       .catch((err) => {
@@ -50,6 +51,11 @@ export function ListNotes(): JSX.Element {
             <Note key={index} index={index} title={title} id={id} description={description} />
           </div>
         ))}
+        <div className={styles.footer}>
+          <p>
+            <Link to="/">Voltar a Home</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

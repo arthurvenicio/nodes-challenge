@@ -79,8 +79,11 @@ button:hover {
     align-items: center;
   }
   .box-create {
-    width: 25rem;
+    /* border: 1px solid black; */
+    width: 100vw;
     height: 25rem;
+
+    margin-right: auto;
 
     padding: 2rem 1.5rem;
 
